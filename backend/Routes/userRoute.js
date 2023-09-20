@@ -2,13 +2,14 @@ const express = require ("express")
 const User= require("../model/usermodel")
 const Post = require("../model/postmodel")
 const Comment = require("../model/commentmodel")
+
 const router= express.Router()
 
 router.post("/addUser",async(req, res, next)=>{
 const {name , email}= req.body
 console.log({name, email})
 await User.create({name, email})
-const data = await User.findAll()
+const data = await User.findAll({where:{email}})
 console.log(data)
 res.send(data)
 

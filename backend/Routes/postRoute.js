@@ -4,6 +4,7 @@ const User = require("../model/usermodel")
 
 const router = express. Router()
 //************************************* */
+// add post
 const addPost=async(req, res)=>{
     try {
         const {title}= req.body

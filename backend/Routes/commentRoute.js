@@ -16,6 +16,14 @@ router.post("/addComment/:postId",addComment)
 
 
 // going to find   all comments of a single post
+const getComment = async(req, res)=>{
+    const {postId}=req.params
+    const data = await Comment.findAll({where:{postId}})
+ 
+    res.send(data)
+
+}
+router.get("/getComment/:postId",getComment)
 
 module.exports= router
 

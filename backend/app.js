@@ -1,4 +1,4 @@
-
+const cors= require ("cors")
 const express = require("express")
 const sequelize = require("./conection/connection")
 
@@ -13,7 +13,7 @@ const userRouter=require("./Routes/userRoute")
 const postrouter= require("./Routes/postRoute")
 const commentRouter = require("./Routes/commentRoute")
 
-
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
